@@ -1,1 +1,3 @@
-# RBC_senzor_demo_pixy
+# K2_Bratislava
+
+Temp repo for learning purposes.
