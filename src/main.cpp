@@ -72,7 +72,8 @@ void setup() {
     // inicializace QRD
     analogReadResolution(10);
     // inicializace RGB
-    if (!tcs.begin(TCS34725_ADDRESS, &rbc().wire())) {
+    // puvodni if (!tcs.begin(TCS34725_ADDRESS, &rbc().wire())) {
+    if (!tcs.begin(TCS34725_ADDRESS, &Wire )) {
         debug.println("Can not connect to the RGB sensor");
         trap();
     }
@@ -84,7 +85,8 @@ void setup() {
     // inicializace Pixy2
     pixy.init(Pixy_addr);
     // reset I2C grequency back to 400 kHz
-    rbc().wire().begin(-1, -1, i2c_freq);
+    // puvodni rbc().wire().begin(-1, -1, i2c_freq);
+    Wire.begin(-1, -1, i2c_freq);
     debug.println("Starting main loop\n");
 }
 
